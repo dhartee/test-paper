@@ -1,0 +1,163 @@
+body {
+    font-family: serif;
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 2em 0;
+}
+
+.input-section {
+    width: 8.5in;
+    padding: 2em;
+    margin-bottom: 2em;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+}
+
+.input-section h2 {
+    text-align: center;
+    margin-top: 0;
+}
+
+#questionInput {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    font-family: sans-serif;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 1em;
+}
+
+.button-group {
+    display: flex;
+    gap: 1em; /* Creates space between the buttons */
+}
+
+.button-group button {
+    flex: 1; /* Makes both buttons take up equal space */
+    padding: 15px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#generateButton {
+    background-color: #007bff;
+}
+
+#generateButton:hover {
+    background-color: #0056b3;
+}
+
+#printButton {
+    background-color: #28a745; /* Green color for print button */
+}
+
+#printButton:hover {
+    background-color: #218838;
+}
+
+/* Style for when the print button is disabled */
+#printButton:disabled {
+    background-color: #a0a0a0;
+    cursor: not-allowed;
+}
+
+.question-paper-container {
+    background-color: white;
+    padding: 2.5em 4em; 
+    width: 8.5in;
+    min-height: 11in;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+.question-paper-header h1,
+.question-paper-header h2,
+.question-paper-header h3 {
+    text-align: center;
+    margin: 0.2em 0;
+}
+
+.question-paper-header h1 {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.question-paper-header h2 {
+    font-size: 1.3em;
+}
+
+.question-paper-header h3 {
+    font-size: 1.2em;
+    text-decoration: underline;
+    margin-bottom: 1.5em;
+}
+
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5em;
+}
+
+.note {
+    margin-bottom: 2em;
+}
+
+main h4, main h5 {
+    text-align: center;
+    margin: 0.5em 0;
+}
+
+main h5 {
+    margin-bottom: 2em;
+}
+
+.question-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1.2em;
+}
+
+.sub-question {
+    padding-left: 2em;
+}
+
+.question {
+    flex-grow: 1;
+}
+
+.marks {
+    margin-left: 1em;
+}
+
+.question-paper-footer {
+    text-align: center;
+    margin-top: 3em;
+}
+
+@media print {
+    body {
+        background-color: #fff;
+        margin: 0;
+    }
+    .input-section {
+        display: none;
+    }
+    .question-paper-container {
+        box-shadow: none;
+        border: none;
+    }
+}
