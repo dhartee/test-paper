@@ -3,16 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rajasthan High Court, Jodhpur - Assistant Stamp Reporter Exam-2025</title>
+    <title>Dynamic Question Paper Generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <div class="input-section">
-        <h2>DharTee Question Paper Maker-- <a href="https://www.dhartee.in">www.dhartee.in</a></h2>
-        <p>Type your questions below. Separate each question with two dots (..). Add marks in parentheses at the end, like (8).</p>
-        <p>Example: Q.5) What is the effect of the following on computation of limitation?(8)..</p>
-        <textarea id="questionInput" placeholder="e.g., Q.1) What are the necessary ingredient of a proper affidavit? (8).." rows="15"></textarea>
+        <h2>Create Your Question Paper</h2>
+        
+        <div class="header-inputs">
+            <div class="input-group">
+                <label for="instituteNameInput">Type Your Institute Name:</label>
+                <input type="text" id="instituteNameInput">
+            </div>
+            <div class="input-group">
+                <label for="examNameInput">Type Your Exam Name:</label>
+                <input type="text" id="examNameInput">
+            </div>
+        </div>
+
+        <label for="questionInput">Type Your Questions:</label>
+        <textarea id="questionInput" placeholder="e.g., Q.1) What are the necessary ingredient of a proper affidavit? (8).." rows="10"></textarea>
+        
         <div class="button-group">
             <button id="generateButton">Generate Paper</button>
             <button id="printButton" disabled>🖨️ Print Paper</button>
@@ -21,8 +33,8 @@
 
     <div class="question-paper-container">
         <header class="question-paper-header">
-            <h1>Rajasthan High Court, Jodhpur</h1>
-            <h2>Assistant Stamp Reporter Exam-2025</h2>
+            <h1 id="paperInstituteName">Rajasthan High Court, Jodhpur</h1>
+            <h2 id="paperExamName">Assistant Stamp Reporter Exam-2025</h2>
             <h3>Question Paper</h3>
             <div class="details">
                 <p class="time">Time: 1 hrs</p>
@@ -44,6 +56,4 @@
 
     <script src="script.js"></script>
 </body>
-
 </html>
-
