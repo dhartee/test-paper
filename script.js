@@ -1,28 +1,62 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Input Section Elements
+    const instituteNameInput = document.getElementById('instituteNameInput');
+    const examNameInput = document.getElementById('examNameInput');
+    const questionInput = document.getElementById('questionInput');
     const generateButton = document.getElementById('generateButton');
     const printButton = document.getElementById('printButton');
-    const questionInput = document.getElementById('questionInput');
+
+    // Paper Preview Elements
+    const paperInstituteName = document.getElementById('paperInstituteName');
+    const paperExamName = document.getElementById('paperExamName');
     const mainContainer = document.getElementById('question-paper-main');
+
+    // --- HEADING PERSISTENCE ---
+
+    // Function to load saved headers from localStorage
+    function loadHeaders() {
+        const savedInstitute = localStorage.getItem('instituteName') || 'Rajasthan High Court, Jodhpur';
+        const savedExam = localStorage.getItem('examName') || 'Assistant Stamp Reporter Exam-2025';
+
+        instituteNameInput.value = savedInstitute;
+        paperInstituteName.textContent = savedInstitute;
+
+        examNameInput.value = savedExam;
+        paperExamName.textContent = savedExam;
+    }
+
+    // Load headers when the page loads
+    loadHeaders();
+
+    // Add event listeners to update headers and save to localStorage
+    instituteNameInput.addEventListener('input', () => {
+        paperInstituteName.textContent = instituteNameInput.value;
+        localStorage.setItem('instituteName', instituteNameInput.value);
+    });
+
+    examNameInput.addEventListener('input', () => {
+        paperExamName.textContent = examNameInput.value;
+        localStorage.setItem('examName', examNameInput.value);
+    });
+
+
+    // --- QUESTION GENERATION ---
 
     generateButton.addEventListener('click', function() {
         const inputText = questionInput.value.trim();
-
-        // Clear previous questions
         mainContainer.innerHTML = '';
-        printButton.disabled = true; // Disable print button on new generation
+        printButton.disabled = true;
 
         if (inputText === '') {
             alert('Please enter at least one question.');
             return;
         }
 
-        // Split the input text into questions using ".." as the delimiter
         const questions = inputText.split('..').filter(q => q.trim() !== '');
 
         questions.forEach(q => {
             const questionText = q.trim();
             let marks = '';
-            
             const marksMatch = questionText.match(/\((\d+)\)$/);
             let cleanQuestionText = questionText;
             
@@ -47,14 +81,12 @@ document.addEventListener('DOMContentLoaded', () => {
             mainContainer.appendChild(questionBlock);
         });
 
-        // Enable the print button if questions were generated
         if (questions.length > 0) {
             printButton.disabled = false;
         }
     });
 
-    printButton.addEventListener('click', function() {
-        // Trigger the browser's print functionality
+    printButton.addEventListener('click', () => {
         window.print();
     });
 });
