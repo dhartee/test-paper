@@ -23,6 +23,35 @@ body {
     margin-top: 0;
 }
 
+/* Styles for new header input fields */
+.header-inputs {
+    display: flex;
+    gap: 1.5em;
+    margin-bottom: 1.5em;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group label,
+.input-section > label {
+    margin-bottom: 0.5em;
+    font-weight: bold;
+    font-family: sans-serif;
+    color: #333;
+    font-size: 0.9em;
+}
+
+.input-group input {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
 #questionInput {
     width: 100%;
     box-sizing: border-box;
@@ -36,11 +65,11 @@ body {
 
 .button-group {
     display: flex;
-    gap: 1em; /* Creates space between the buttons */
+    gap: 1em;
 }
 
 .button-group button {
-    flex: 1; /* Makes both buttons take up equal space */
+    flex: 1;
     padding: 15px;
     font-size: 1.2em;
     font-weight: bold;
@@ -60,14 +89,13 @@ body {
 }
 
 #printButton {
-    background-color: #28a745; /* Green color for print button */
+    background-color: #28a745;
 }
 
 #printButton:hover {
     background-color: #218838;
 }
 
-/* Style for when the print button is disabled */
 #printButton:disabled {
     background-color: #a0a0a0;
     cursor: not-allowed;
@@ -115,24 +143,11 @@ body {
     margin-bottom: 2em;
 }
 
-main h4, main h5 {
-    text-align: center;
-    margin: 0.5em 0;
-}
-
-main h5 {
-    margin-bottom: 2em;
-}
-
 .question-block {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 1.2em;
-}
-
-.sub-question {
-    padding-left: 2em;
 }
 
 .question {
